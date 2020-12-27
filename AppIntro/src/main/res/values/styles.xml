@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Philipp Geppert on 12/27/20 2:31 PM
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 12/27/20 2:31 PM
+  ~  */
+  -->
+
+<resources>
+
+    <style name="tv_title" parent="Theme.AppCompat">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+    <style name="tv_text" parent="Theme.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:padding">6dp</item>
+    </style>
+</resources>

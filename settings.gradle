@@ -1,0 +1,3 @@
+include ':AppIntro'
+include ':app'
+rootProject.name = "AppIntroMaster"

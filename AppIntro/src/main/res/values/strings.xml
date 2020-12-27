@@ -1,0 +1,16 @@
+<!--
+  ~ /**
+  ~  * Created by Philipp Geppert on 12/27/20 11:42 AM
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 12/27/20 11:42 AM
+  ~  */
+  -->
+
+<resources>
+
+    <string name="next">Weiter</string>
+    <string name="skip">Überspringen</string>
+    <string name="slideicon">SlideIcon</string>
+    <string name="start">Start</string>
+
+</resources>

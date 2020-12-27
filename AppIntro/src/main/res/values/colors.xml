@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Philipp Geppert on 12/27/20 11:47 AM
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 12/27/20 11:47 AM
+  ~  */
+  -->
+
+<resources>
+
+    <color name="gray">#747171</color>
+    <color name="dot_active">#C30288D1</color>
+    <color name="dot_inactiv">#747171</color>
+
+</resources>
