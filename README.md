@@ -4,7 +4,9 @@ A Simple Library to create an App Intro
 # How To
 
 Add to your manifest
-<activity android:name="com.geppert.appintro.WelcomeActivity" />
+
+activity android:name="com.geppert.appintro.WelcomeActivity"
+
 
 Add to your activity
 
