@@ -12,7 +12,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +27,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -40,7 +40,6 @@ public class WelcomeActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
 
     private ViewPager2 viewPager;
-    private ViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private Button btnSkip, btnNext;
@@ -52,6 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
 
         //hide title bar
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -62,8 +62,6 @@ public class WelcomeActivity extends AppCompatActivity {
             launchHomeScreen();
             finish();
         }
-
-        setContentView(R.layout.activity_welcome);
 
         viewPager = findViewById(R.id.view_pager);
         dotsLayout = findViewById(R.id.layoutDots);
@@ -78,7 +76,7 @@ public class WelcomeActivity extends AppCompatActivity {
         changeStatusBarColor();
 
 
-        myViewPagerAdapter = new ViewPagerAdapter(this, IntroBuilder.DrawableList, IntroBuilder.HeaderList, IntroBuilder.DescriptionList);
+        ViewPagerAdapter myViewPagerAdapter = new ViewPagerAdapter(this, IntroBuilder.DrawableList, IntroBuilder.HeaderList, IntroBuilder.DescriptionList);
         viewPager.setAdapter(myViewPagerAdapter);
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -132,7 +130,7 @@ public class WelcomeActivity extends AppCompatActivity {
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("&#8226;"));
+            dots[i].setText(HtmlCompat.fromHtml("&#8226;", HtmlCompat.FROM_HTML_MODE_LEGACY));
             dots[i].setTextSize(35);
             dots[i].setTextColor(ContextCompat.getColor(this, R.color.dot_inactiv));
             dotsLayout.addView(dots[i]);
@@ -184,13 +182,13 @@ public class WelcomeActivity extends AppCompatActivity {
 
         @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = mInflater.inflate(R.layout.layout_slide, parent, false);
             return new ViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             if (position < Drawables.size()) {
                 Integer drawable = Drawables.get(position);
                 holder.ivIcon.setImageResource(drawable);
