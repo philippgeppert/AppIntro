@@ -54,7 +54,9 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         //hide title bar
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        if (getSupportActionBar() != null) {
+            Objects.requireNonNull(getSupportActionBar()).hide();
+        }
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
@@ -63,10 +65,10 @@ public class WelcomeActivity extends AppCompatActivity {
             finish();
         }
 
-        viewPager = findViewById(R.id.view_pager);
+        viewPager = findViewById(R.id.ViewPager_IntroSlides);
         dotsLayout = findViewById(R.id.layoutDots);
-        btnSkip = findViewById(R.id.btn_skip);
-        btnNext = findViewById(R.id.btn_next);
+        btnSkip = findViewById(R.id.btnSkip);
+        btnNext = findViewById(R.id.btnNext);
 
 
         // adding bottom dots
