@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -51,6 +52,9 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //hide title bar
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
