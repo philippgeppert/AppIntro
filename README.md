@@ -6,10 +6,6 @@ Add to your dependencies
 
        implementation 'com.github.philippgeppert:AppIntro:0.1.4'
 
-Add to your manifest
-
-       activity android:name="com.geppert.appintro.WelcomeActivity"
-
 
 Add to your activity
 
