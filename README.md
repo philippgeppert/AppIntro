@@ -4,7 +4,7 @@ A Simple Library to create an App Intro
 # How To
 Add to your dependencies
 
-       implementation 'com.github.philippgeppert:AppIntro:0.1.1'
+       implementation 'com.github.philippgeppert:AppIntro:0.1.4'
 
 Add to your manifest
 
